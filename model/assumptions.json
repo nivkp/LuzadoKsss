@@ -1,0 +1,58 @@
+{
+  "_note": "PLACEHOLDER v0 - prior-knowledge values used only to smoke-test the engine; replaced by researched values in v1.",
+  "league": {
+    "k_LHP_vs_L": 0.240,
+    "k_LHP_vs_R": 0.218,
+    "bb_LHP_vs_L": 0.080,
+    "bb_LHP_vs_R": 0.086,
+    "hr": 0.030
+  },
+  "pitcher": {
+    "k_vs_L": 0.31,
+    "k_vs_R": 0.27,
+    "bb_vs_L": 0.07,
+    "bb_vs_R": 0.08,
+    "hr": 0.028,
+    "hbp": 0.009,
+    "babip": 0.295,
+    "dp_rate_given_chance": 0.11,
+    "k_logit_sd": 0.12,
+    "tto_k_mult": [1.05, 1.0, 0.95]
+  },
+  "arm_states": {
+    "sharp_max_effort": {"weight": 0.40, "k_mult": 1.12, "bb_mult": 0.95, "cap_mult": 1.05, "hook_mult": 0.8},
+    "normal": {"weight": 0.38, "k_mult": 1.00, "bb_mult": 1.05, "cap_mult": 1.0, "hook_mult": 1.0},
+    "rusty": {"weight": 0.17, "k_mult": 0.85, "bb_mult": 1.30, "cap_mult": 0.9, "hook_mult": 1.5},
+    "compromised": {"weight": 0.05, "k_mult": 0.70, "bb_mult": 1.5, "cap_mult": 0.7, "hook_mult": 2.5, "injury_hazard_mult": 4.0}
+  },
+  "workload_scenarios": {
+    "short_opener": {"weight": 0.25, "pitch_cap_tri": [20, 28, 35], "inning_cap": {"1": 0.3, "2": 0.7}},
+    "one_trip": {"weight": 0.50, "pitch_cap_tri": [30, 40, 50], "inning_cap": {"2": 0.4, "3": 0.6}, "bf_cap": {"9": 0.5, "10": 0.3, "11": 0.2}},
+    "extended": {"weight": 0.25, "pitch_cap_tri": [45, 55, 65], "inning_cap": {"3": 0.5, "4": 0.5}}
+  },
+  "hooks": {
+    "between_innings_buffer": 8,
+    "mid_inning_overrun": 5,
+    "bf_cap_mid_inning_slack": 0,
+    "runs_hard_hook": 3,
+    "p_hook_2runs_traffic": 0.35,
+    "p_hook_traffic_per_pa": 0.08,
+    "injury_exit_per_pitch": 0.0003
+  },
+  "environment": {
+    "k_mult_total": 1.0,
+    "bb_mult_total": 1.0,
+    "p_weather_interrupt_during_outing": 0.0
+  },
+  "lineup": [
+    {"slot": 1, "name": "Ronald Acuna Jr.", "hand": "R", "k": 0.23, "bb": 0.12, "hr": 0.045},
+    {"slot": 2, "name": "Ozzie Albies", "hand": "R", "k": 0.13, "bb": 0.08, "hr": 0.030},
+    {"slot": 3, "name": "Austin Riley", "hand": "R", "k": 0.27, "bb": 0.08, "hr": 0.045},
+    {"slot": 4, "name": "Matt Olson", "hand": "L", "k": 0.23, "bb": 0.10, "hr": 0.040},
+    {"slot": 5, "name": "Drake Baldwin", "hand": "L", "k": 0.21, "bb": 0.09, "hr": 0.035},
+    {"slot": 6, "name": "Ha-Seong Kim", "hand": "R", "k": 0.19, "bb": 0.09, "hr": 0.025},
+    {"slot": 7, "name": "Sean Murphy", "hand": "R", "k": 0.24, "bb": 0.10, "hr": 0.035},
+    {"slot": 8, "name": "Jurickson Profar", "hand": "R", "k": 0.15, "bb": 0.10, "hr": 0.030},
+    {"slot": 9, "name": "Michael Harris II", "hand": "L", "k": 0.22, "bb": 0.05, "hr": 0.030}
+  ]
+}
